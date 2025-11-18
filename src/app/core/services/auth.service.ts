@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginRequest } from '../models/login-request.model';
 import { tap } from 'rxjs';
+import { RegistroUsuarioRequest } from '../models/registro-usuario-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,9 @@ export class AuthService {
       token,
       novaSenha
     });
+  }
+
+  registrar(data: RegistroUsuarioRequest) {
+    return this.http.post(`${this.apiUrl}/registrar`, data);
   }
 }
