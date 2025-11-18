@@ -1,0 +1,28 @@
+<div class="register-wrapper">
+
+    <div class="register-card">
+        <h2>Criar Conta</h2>
+        <p class="subtitle">Hotel Nóbrega - Sistema de Reservas</p>
+
+        <form [formGroup]="form" (ngSubmit)="registrar()">
+
+            <label>Nome Completo</label>
+            <input type="text" formControlName="nome" placeholder="Seu nome completo">
+
+            <label>Email</label>
+            <input type="email" formControlName="email" placeholder="Digite seu email">
+
+            <label>Senha</label>
+            <input type="password" formControlName="senha" placeholder="Crie uma senha">
+
+            <label>Confirmar senha</label>
+            <input type="password" formControlName="confirmSenha" placeholder="Confirme a senha">
+
+            <button type="submit" [disabled]="loading || form.invalid">
+                {{ loading ? 'Registrando...' : 'Registrar' }}
+            </button>
+
+            <a routerLink="/login" class="back-link">Já tenho uma conta</a>
+        </form>
+    </div>
+</div>
