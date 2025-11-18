@@ -1,19 +1,27 @@
-<div class="login-container">
+<div class="login-wrapper">
 
-    <form [formGroup]="form" (ngSubmit)="login()" class="login-card">
+    <div class="login-card">
 
-        <h2>Login</h2>
+        <img src="assets/logo.png" alt="Hotel Nóbrega" class="logo">
 
-        <label>Email</label>
-        <input formControlName="username" type="email" placeholder="Email">
+        <h2>Hotel Nóbrega</h2>
+        <p class="subtitle">Sistema de Reservas</p>
 
-        <label>Senha</label>
-        <input formControlName type="password" placeholder="Senha">
+        <form [formGroup]="form" (ngSubmit)="login()">
 
-        <button type="submit" [disabled]="loading || form.invalid">
-            {{ loading ? 'Entrando...' : 'Entrar' }}
-        </button>
+            <label>Email</label>
+            <input type="email" formControlName="username" placeholder="Digite seu email">
 
-    </form>
+            <label>Senha</label>
+            <input type="password" formControlName="password" placeholder="Digite sua senha">
 
+            <button type="submit" [disabled]="loading || form.invalid">
+                {{ loading ? 'Entrando...' : 'Entrar' }}
+            </button>
+
+            <a routerLink="/forgot-password" class="forgot-link">
+                Esqueci minha senha
+            </a>
+        </form>
+    </div>
 </div>
