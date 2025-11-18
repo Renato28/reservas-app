@@ -8,13 +8,13 @@ import { tap } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8080/auth/login'
+  private apiUrl = 'http://localhost:8080/auth'
   private tokenKey = 'authToken';
 
   constructor(private http: HttpClient) {}
 
   login(request: LoginRequest) {
-    return this.http.post(this.apiUrl, request, { responseType: 'text'}).pipe(
+    return this.http.post(this.apiUrl + "/login", request, { responseType: 'text'}).pipe(
       tap(token => {
         localStorage.setItem(this.tokenKey, token);
       })
@@ -31,5 +31,16 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post(this.apiUrl + "/forgot-password", { email });
+  }
+
+  resetPassword(token: string, novaSenha: string) {
+    return this.http.post(this.apiUrl + "/reset-password", {
+      token,
+      novaSenha
+    });
   }
 }
