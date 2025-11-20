@@ -47,10 +47,12 @@ export class RegisterUsuarioComponent implements OnInit {
     };
 
     this.authService.registrar(novoUsuario).subscribe({
+
       next: () => {
         this.loading = false;
         alert("Usuario registrado com sucesso!");
         this.router.navigate(['/login']);
+        
       },
       error: () => {
         this.loading = false;

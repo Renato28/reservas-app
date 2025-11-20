@@ -46,6 +46,7 @@ export class AuthService {
   }
 
   registrar(data: RegistroUsuarioRequest) {
-    return this.http.post(`${this.apiUrl}/registrar`, data);
+    return this.http.post(`${this.apiUrl}/registrar`, 
+      data, { responseType: 'text' });
   }
 }
