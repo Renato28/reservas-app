@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginRequest } from '../models/login-request.model';
+import { LoginRequest } from '../../models/login-request.model';
 import { tap } from 'rxjs';
-import { RegistroUsuarioRequest } from '../models/registro-usuario-request.model';
+import { RegistroUsuarioRequest } from '../../models/registro-usuario-request.model';
 
 @Injectable({
   providedIn: 'root'
