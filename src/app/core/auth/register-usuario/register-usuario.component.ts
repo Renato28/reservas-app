@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { RegistroUsuarioRequest } from '../../models/registro-usuario-request.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register-usuario',
@@ -16,6 +17,7 @@ export class RegisterUsuarioComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private toastService: ToastrService,
     private router: Router
   ) { }
 
@@ -34,7 +36,7 @@ export class RegisterUsuarioComponent implements OnInit {
     if (this.form.invalid) return;
 
     if (this.form.value.senha !== this.form.value.confirmSenha) {
-      alert("As senhas não coincidem")
+      this.toastService.error("As senhas não coincidem");
       return;
     }
 
@@ -50,13 +52,13 @@ export class RegisterUsuarioComponent implements OnInit {
 
       next: () => {
         this.loading = false;
-        alert("Usuario registrado com sucesso!");
+        this.toastService.success("Usuário registrado com sucesso!");
         this.router.navigate(['/login']);
         
       },
       error: () => {
         this.loading = false;
-        alert("Erro ao registrar usuário")
+        this.toastService.error("Erro ao registrar usuário");
       }
     });
     
