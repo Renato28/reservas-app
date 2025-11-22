@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ReservaListagem } from '../../models/reserva-listagem';
 import { ReservaRequest } from '../../models/reserva-request.model';
+import { AtualizarStatusReserva } from '../../models/atualizar-status-reserva';
+import { ReservaResponse } from '../../models/reserva-response';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +34,11 @@ export class ReservaService {
   atualizar(id: number, dto: ReservaRequest): Observable<ReservaRequest> {
     return this.http.put<ReservaRequest>(`${this.apiUrl}/${id}`, dto);
   }
+
+  atualizarStatus(id: number, dto: AtualizarStatusReserva) : Observable<ReservaResponse> {
+    return this.http.patch<ReservaResponse>(`${this.apiUrl}/${id}`, dto);
+  }
+
 
   realizarCheckIn(id: number): Observable<string> {
     return this.http.put(`${this.apiUrl}/check-in/${id}`, null, {
