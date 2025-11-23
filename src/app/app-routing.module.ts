@@ -6,10 +6,12 @@ import { ResetPasswordComponent } from './core/auth/reset-password/reset-passwor
 import { RegisterUsuarioComponent } from './core/auth/register-usuario/register-usuario.component';
 import { DashboardComponent } from './core/componentes/dashboard/dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ReservasFormComponent } from './features/reservas/reservas-form/reservas-form/reservas-form.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'reservas', component: ReservasFormComponent },
   { path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard] },
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
