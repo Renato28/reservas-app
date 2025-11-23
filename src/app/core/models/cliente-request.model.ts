@@ -4,4 +4,7 @@ export interface ClienteRequest {
     email: string;
     telefone: string;
     documento: string;
+    tipoCliente: string;
+    tipoDocumento: string;
+
 }
