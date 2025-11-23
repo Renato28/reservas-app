@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111827;
+  color: #fff;
+}
+
+.user-info button {
+  margin-left: 10px;
+  background: #3b82f6;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
