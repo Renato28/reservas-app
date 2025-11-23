@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class HospedeReservaService {
 
-  private apiUrl = 'http://localhost:8080/api/hospedes'
+  private readonly  apiUrl = 'http://localhost:8080/api/hospedes'
 
   constructor(private http: HttpClient) { }
 
