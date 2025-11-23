@@ -12,8 +12,8 @@ export class QuartoService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<QuartoRequest> {
-    return this.http.get<QuartoRequest>(`${this.apiUrl}`);
+  listar(): Observable<QuartoRequest[]> {
+    return this.http.get<QuartoRequest[]>(`${this.apiUrl}`);
   }
 
   buscarPorId(id: number): Observable<QuartoRequest> {
