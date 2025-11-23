@@ -17,6 +17,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { SharedModule } from './shared/shared.module';
 import { NgChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { ReservasFormComponent } from './features/reservas/reservas-form/reservas-form/reservas-form.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -28,6 +30,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     ResetPasswordComponent,
     RegisterUsuarioComponent,
     DashboardComponent,
+    ReservasFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     HttpClientModule,
     SharedModule,
     NgChartsModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    RouterModule
     
   ],
   providers: [
