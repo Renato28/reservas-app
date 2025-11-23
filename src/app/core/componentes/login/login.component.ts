@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private toastService: ToastrService,
     private router: Router
   ) {}
 
@@ -37,7 +39,7 @@ export class LoginComponent implements OnInit {
       },
       error: () => {
         this.loading = false;
-        alert('Usuário ou senha incorretos');
+        this.toastService.error('Usuário ou senha incorretos');
       }
     });
   }
