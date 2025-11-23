@@ -1,0 +1,32 @@
+<div class="login-wrapper">
+
+    <div class="login-card">
+
+        <img src="assets/logo.png" alt="Hotel Nóbrega" class="logo">
+
+        <h2>Hotel Nóbrega</h2>
+        <p class="subtitle">Sistema de Reservas</p>
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+
+            <label>Email</label>
+            <input type="email" formControlName="username" placeholder="Digite seu email">
+
+            <label>Senha</label>
+            <input type="password" formControlName="password" placeholder="Digite sua senha">
+
+            <button type="submit" [disabled]="loading || form.invalid">
+                {{ loading ? 'Entrando...' : 'Entrar' }}
+            </button>
+
+            <a routerLink="/forgot-password" class="forgot-link">
+                Esqueci minha senha
+            </a>
+
+            <div class="register-box">
+                Não tem conta?
+                <a routerLink="/register" class="register-link">Criar conta</a>
+            </div>
+        </form>
+    </div>
+</div>
