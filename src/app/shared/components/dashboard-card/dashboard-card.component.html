@@ -1,0 +1,8 @@
+<div class="card" [class.animate]="animated" [attr.aria-label]="titulo">
+  <div class="card-head">
+    <div class="icon" *ngIf="iconeClass"><i [class]="iconeClass"></i></div>
+    <div class="card-title">{{ titulo }}</div>
+  </div>
+  <div class="card-value">{{ displayValue }}</div>
+</div>
+
