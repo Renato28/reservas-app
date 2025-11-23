@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header *ngIf="isLoggedIn()" (logoutEvent)="OnLogout()"></app-header>
 
 <div class="app-container">
   <!-- Sidebar -->
@@ -6,7 +6,7 @@
 
   <!-- Área principal de conteúdo -->
   <main class="main-content" [class.collapsed]="isSidebarCollapsed">
-    <router-outlet></router-outlet>
-  </main>
+  <router-outlet></router-outlet>
+ </main>
 </div>
 

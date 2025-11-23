@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginRequest } from '../../models/login-request.model';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { RegistroUsuarioRequest } from '../../models/registro-usuario-request.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,16 @@ export class AuthService {
   private apiUrl = 'http://localhost:8080/auth'
   private tokenKey = 'authToken';
 
-  constructor(private http: HttpClient) {}
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this.loggedIn.asObservable();
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(request: LoginRequest) {
     return this.http.post(this.apiUrl + "/login", request, { responseType: 'text'}).pipe(
       tap(token => {
         localStorage.setItem(this.tokenKey, token);
+        this.loggedIn.next(true);
       })
     );
   }
@@ -32,6 +37,8 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
+    this.loggedIn.next(false);
+    this.router.navigate(['/login']);
   }
 
   forgotPassword(email: string) {
@@ -48,5 +55,9 @@ export class AuthService {
   registrar(data: RegistroUsuarioRequest) {
     return this.http.post(`${this.apiUrl}/registrar`, 
       data, { responseType: 'text' });
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
