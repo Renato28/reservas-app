@@ -1,0 +1,49 @@
+<div class="reserva-form-container">
+    <h1>Cadastro de Reservas</h1>
+
+    <form [formGroup]="reservaForm" (ngSubmit)="submitForm()">
+
+        <div class="form-row">
+            <label>Cliente</label>
+            <select formControlName="clienteId">
+                <option value="" disabled>Selecione um cliente</option>
+                <option *ngFor="let c of clientes" [value]="c.id">{{ c.nome }}</option>
+            </select>
+            <span class="error" *ngIf="f['clienteId'].touched && f['clienteId'].invalid">
+               Selecione um cliente
+            </span>
+        </div>
+
+        <div class="form-row">
+            <label>Quarto</label>
+            <select formControlName="quartoId">
+                <option value="" disabled>Selecione um quarto</option>
+                <option *ngFor="let q of quartos" [value]="q.id">{{ q.numero }}</option>
+            </select>
+            <span class="error" *ngIf="f['quartoId'].touched && f['quartoId'].invalid">
+              Selecione um quarto
+            </span>
+        </div>
+
+        <div class="form-row">
+            <label>Data Check-in</label>
+            <input formControlName="dataCheckIn" type="date">
+            <span class="error" *ngIf="f['dataCheckIn'].touched && f['dataCheckIn'].invalid">
+                Campo obrigatório
+            </span>
+        </div>
+
+        <div class="form-row">
+            <label>Data Check-out</label>
+            <input formControlName="dataCheckOut" type="date">
+            <span class="error" *ngIf="f['dataCheckOut'].touched && f['dataCheckOut'].invalid">
+               Campo obrigatório
+            </span>
+        </div>
+
+        <button type="submit" [disabled]="submitting">
+            {{ submitting ? 'Salvando...' : 'Cadastrar Reserva' }}
+        </button>
+
+    </form>
+</div>
