@@ -1,0 +1,20 @@
+<aside class="sidebar" [class.collapsed]="collapsed">
+  <div class="brand">
+    <div class="logo">🏨</div>
+    <span class="name" *ngIf="!collapsed">Reservas Admin</span>
+    <button class="btn-collapse" (click)="toggle()">
+      <i class="fa" [ngClass]="collapsed ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+    </button>
+  </div>
+
+  <nav class="menu">
+    <a routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-chart-line"></i><span *ngIf="!collapsed">Dashboard</span></a>
+    <a routerLink="/reservas" routerLinkActive="active"><i class="fa fa-calendar-days"></i><span *ngIf="!collapsed">Reservas</span></a>
+    <a routerLink="/clientes" routerLinkActive="active"><i class="fa fa-users"></i><span *ngIf="!collapsed">Clientes</span></a>
+    <a routerLink="/quartos" routerLinkActive="active"><i class="fa fa-door-open"></i><span *ngIf="!collapsed">Quartos</span></a>
+    <a routerLink="/hoteis" routerLinkActive="active"><i class="fa fa-building"></i><span *ngIf="!collapsed">Hotéis</span></a>
+    <a routerLink="/usuarios" routerLinkActive="active"><i class="fa fa-user-shield"></i><span *ngIf="!collapsed">Usuários</span></a>
+  </nav>
+</aside>
+
+
