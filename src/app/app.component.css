@@ -1,0 +1,27 @@
+/* Layout principal */
+.app-container {
+  display: flex;
+  height: calc(100vh - 60px); /* ajusta altura considerando header */
+  margin-top: 60px; /* espaço para header fixo */
+}
+
+/* Área de conteúdo */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s;
+  margin-left: 220px; /* Largura do sidebar expandido */
+  background-color: #f4f4f5;
+  min-height: calc(100vh - 60px);
+}
+
+.main-content.collapsed {
+  margin-left: 80px; /* Largura do sidebar colapsado */
+}
+
+/* Ajustes gerais do body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f5;
+}

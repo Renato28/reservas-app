@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<app-header></app-header>
+
+<div class="app-container">
+  <!-- Sidebar -->
+  <app-sidebar (collapseChange)="onSidebarToggle($event)"></app-sidebar>
+
+  <!-- Área principal de conteúdo -->
+  <main class="main-content" [class.collapsed]="isSidebarCollapsed">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
