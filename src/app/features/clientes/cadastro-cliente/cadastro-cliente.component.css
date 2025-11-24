@@ -1,0 +1,147 @@
+/* Container principal */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Título */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* Inputs e selects */
+.form-control {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+/* Foco do input */
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+  outline: none;
+  background: #fff;
+}
+
+/* Erros */
+.text-danger {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #dc2626 !important;
+}
+
+/* Botão principal */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    margin: 15px;
+    padding: 18px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-salvar {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn.btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #2563eb !important; /* Azul moderno */
+  border: none !important;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover */
+.btn.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8 !important;
+  transform: translateY(-1px);
+}
+
+/* Clicar */
+.btn.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Estado desabilitado */
+.btn.btn-primary:disabled {
+  background-color: #9ca3af !important;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.8;
+}
+
+

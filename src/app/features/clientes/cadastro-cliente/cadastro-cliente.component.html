@@ -1,0 +1,68 @@
+<div class="container">
+    <h2>Cadastrar Cliente</h2>
+
+    <form [formGroup]="clienteForm" (ngSubmit)="cadastrar()">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" formControlName="nome">
+            <small *ngIf="invalid('nome')" class="text-danger">
+                Nome é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <small *ngIf="invalid('email')" class="text-danger">
+                E-mail é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Telefone</label>
+            <input type="text" class="form-control" formControlName="telefone">
+            <small *ngIf="invalid('telefone')" class="text-danger">
+                Telefone é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Documento</label>
+            <input type="text" class="form-control" formControlName="documento">
+            <small *ngIf="invalid('documento')" class="text-danger">
+                Documento é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo de Cliente</label>
+            <select class="form-control" formControlName="tipoCliente">
+                <option value="">Selecione</option>
+                <option value="FISICA">PESSOA FISICA</option>
+                <option value="JURIDICA">PESSOA JURIDICA</option>
+                <option value="AGENCIA">AGÊNCIA</option>
+            </select>
+            <small *ngIf="invalid('tipoCliente')" class="text-danger">
+                Tipo de cliente é obrigatório
+            </small>
+        </div>
+
+          <div class="form-group">
+            <label>Tipo de Documento</label>
+            <select class="form-control" formControlName="tipoDocumento">
+                <option value="">Selecione</option>
+                <option value="CPF">CPF</option>
+                <option value="RG">RG</option>
+                <option value="CNPJ">CNPJ</option>
+                <option value="PASSAPORTE">AGÊNCIA</option>
+            </select>
+            <small *ngIf="invalid('tipoDocumento')" class="text-danger">
+                Tipo de documento é obrigatório
+            </small>
+        </div>
+
+         <button class="btn btn-primary mt-3" [disabled]="clienteForm.invalid">
+         Salvar
+        </button>
+    </form>
+</div>
