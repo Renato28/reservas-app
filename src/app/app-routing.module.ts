@@ -7,25 +7,33 @@ import { RegisterUsuarioComponent } from './core/auth/register-usuario/register-
 import { DashboardComponent } from './core/componentes/dashboard/dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { ReservasFormComponent } from './features/reservas/reservas-form/reservas-form/reservas-form.component';
+import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/cadastro-cliente.component';
 
 const routes: Routes = [
+  // ROTAS PÚBLICAS
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'reservas', component: ReservasFormComponent },
-  { path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard] },
-
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-
-  { path: '**', redirectTo: 'dashboard' },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'register', component: RegisterUsuarioComponent},
+  { path: 'register', component: RegisterUsuarioComponent },
 
+  // ROTAS PROTEGIDAS
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard.module')
+        .then(m => m.DashboardModule),
+    canActivate: [AuthGuard]
+  },
+
+  { path: 'reservas', component: ReservasFormComponent, canActivate: [AuthGuard] },
+  { path: 'clientes', component: CadastroClienteComponent, canActivate: [AuthGuard] },
+
+  // REDIRECIONAMENTO PADRÃO → LOGIN
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule) },
+
+  // NOT FOUND → LOGIN
   { path: '**', redirectTo: 'login' }
 ];
-
 
 
 @NgModule({
