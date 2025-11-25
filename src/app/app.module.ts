@@ -20,6 +20,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { ReservasFormComponent } from './features/reservas/reservas-form/reservas-form/reservas-form.component';
 import { RouterModule } from '@angular/router';
 import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/cadastro-cliente.component';
+import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-quartos/cadastro-quartos.component';
 
 
 
@@ -33,6 +34,7 @@ import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/c
     DashboardComponent,
     ReservasFormComponent,
     CadastroClienteComponent,
+    CadastroQuartosComponent,
   ],
   imports: [
     BrowserModule,
