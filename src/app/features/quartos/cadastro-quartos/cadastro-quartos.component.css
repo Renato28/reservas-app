@@ -1,0 +1,70 @@
+.quarto-form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.quarto-form-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-row label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.form-row input,
+.form-row select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+.error {
+    margin-top: 6px;
+    color: #d9534f;
+    font-size: 13px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover:not([disabled]) {
+    background-color: #0056b3;
+}
+
+button[disabled] {
+    background-color: #9bbce0;
+    cursor: not-allowed;
+}

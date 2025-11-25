@@ -1,0 +1,57 @@
+<div class="quarto-form-container">
+    <h1>Cadastro de Quartos</h1>
+
+    <form [formGroup]="quartoForm" (ngSubmit)="cadastrar()">
+
+        <!-- Número do Quarto -->
+        <div class="form-row">
+            <label>Número do Quarto</label>
+            <input formControlName="numero" type="text" placeholder="Ex: 101">
+            <span class="error" *ngIf="f['numero'].touched && f['numero'].invalid">
+                Campo obrigatório
+            </span>
+        </div>
+
+        <!-- Tipo do Quarto (enum) -->
+        <div class="form-row">
+            <label>Tipo do Quarto</label>
+            <select formControlName="tipo">
+                <option value="" disabled>Selecione o tipo</option>
+                <option *ngFor="let tipo of tiposQuarto" [value]="tipo">
+                    {{ tipo }}
+                </option>
+            </select>
+            <span class="error" *ngIf="f['tipo'].touched && f['tipo'].invalid">
+                Campo obrigatório
+            </span>
+        </div>
+
+        <!-- Preço da Diária -->
+        <div class="form-row">
+            <label>Preço da Diária (R$)</label>
+            <input formControlName="precoDiaria" type="number" step="0.01" placeholder="Ex: 199.90">
+            <span class="error" *ngIf="f['precoDiaria'].touched && f['precoDiaria'].invalid">
+                Informe um valor válido
+            </span>
+        </div>
+
+        <div class="form-row">
+            <label>Status</label>
+            <select formControlName="status">
+                <option value="" disabled>Selecione o status</option>
+                <option *ngFor="let s of statusOptions" [value]="s">
+                    {{ s }}
+                </option>
+            </select>
+            <span class="error" *ngIf="f['status'].touched && f['status'].invalid">
+                Campo obrigatório
+            </span>
+        </div>
+
+        <!-- Botão -->
+        <button type="submit" [disabled]="submitting">
+            {{ submitting ? 'Salvando...' : 'Cadastrar Quarto' }}
+        </button>
+
+    </form>
+</div>
