@@ -1,49 +1,52 @@
-<div class="reserva-form-container">
-    <h1>Cadastro de Reservas</h1>
+<div class="container">
+    <h2>Cadastrar Reserva</h2>
 
     <form [formGroup]="reservaForm" (ngSubmit)="submitForm()">
 
-        <div class="form-row">
+        <div class="form-group">
             <label>Cliente</label>
-            <select formControlName="clienteId">
-                <option value="" disabled>Selecione um cliente</option>
-                <option *ngFor="let c of clientes" [value]="c.id">{{ c.nome }}</option>
+            <select class="form-control" formControlName="clienteId">
+                <option value="">Selecione um cliente</option>
+                <option *ngFor="let c of clientes" [value]="c.id">
+                    {{ c.nome }}
+                </option>
             </select>
-            <span class="error" *ngIf="f['clienteId'].touched && f['clienteId'].invalid">
-               Selecione um cliente
-            </span>
+            <small *ngIf="f['clienteId'].touched && f['clienteId'].invalid" class="text-danger">
+                Selecione um cliente
+            </small>
         </div>
 
-        <div class="form-row">
+        <div class="form-group">
             <label>Quarto</label>
-            <select formControlName="quartoId">
-                <option value="" disabled>Selecione um quarto</option>
-                <option *ngFor="let q of quartos" [value]="q.id">{{ q.numero }}</option>
+            <select class="form-control" formControlName="quartoId">
+                <option value="">Selecione um quarto</option>
+                <option *ngFor="let q of quartos" [value]="q.id">
+                    {{ q.numero }}
+                </option>
             </select>
-            <span class="error" *ngIf="f['quartoId'].touched && f['quartoId'].invalid">
-              Selecione um quarto
-            </span>
+            <small *ngIf="f['quartoId'].touched && f['quartoId'].invalid" class="text-danger">
+                Selecione um quarto
+            </small>
         </div>
 
-        <div class="form-row">
+        <div class="form-group">
             <label>Data Check-in</label>
-            <input formControlName="dataCheckIn" type="date">
-            <span class="error" *ngIf="f['dataCheckIn'].touched && f['dataCheckIn'].invalid">
+            <input type="date" class="form-control" formControlName="dataCheckIn">
+            <small *ngIf="f['dataCheckIn'].touched && f['dataCheckIn'].invalid" class="text-danger">
                 Campo obrigatório
-            </span>
+            </small>
         </div>
 
-        <div class="form-row">
+        <div class="form-group">
             <label>Data Check-out</label>
-            <input formControlName="dataCheckOut" type="date">
-            <span class="error" *ngIf="f['dataCheckOut'].touched && f['dataCheckOut'].invalid">
-               Campo obrigatório
-            </span>
+            <input type="date" class="form-control" formControlName="dataCheckOut">
+            <small *ngIf="f['dataCheckOut'].touched && f['dataCheckOut'].invalid" class="text-danger">
+                Campo obrigatório
+            </small>
         </div>
 
-        <button type="submit" [disabled]="submitting">
+        <button class="btn btn-primary mt-3" type="submit" [disabled]="submitting || reservaForm.invalid">
             {{ submitting ? 'Salvando...' : 'Cadastrar Reserva' }}
         </button>
-
     </form>
 </div>
