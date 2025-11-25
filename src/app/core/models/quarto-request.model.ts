@@ -1,9 +1,10 @@
-export type Status = 'DISPONIVEL' | 'OCUPADO' | 'MANUTENCAO'
+import { StatusQuarto } from "./status-quarto.enum";
+import { TipoQuarto } from "./tipo-quarto.enum";
 
 export interface QuartoRequest {
     id?: number;
     numero: string;
-    tipo: string;
+    tipo: TipoQuarto;
     precoDiaria: number;
-    status: Status;
+    status: StatusQuarto;
 }
