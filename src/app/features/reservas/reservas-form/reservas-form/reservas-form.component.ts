@@ -48,6 +48,7 @@ export class ReservasFormComponent implements OnInit {
       next: (data) => (this.quartos = data),
       error: (err) => console.error('Erro ao carregar os quartos', err)
     });
+    console.log('quartos', this.quartos);
   }
 
   submitForm(): void {

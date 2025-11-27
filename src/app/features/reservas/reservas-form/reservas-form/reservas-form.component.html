@@ -17,15 +17,28 @@
         </div>
 
         <div class="form-group">
-            <label>Quarto</label>
+            <label>Número do Quarto</label>
             <select class="form-control" formControlName="quartoId">
-                <option value="">Selecione um quarto</option>
+                <option value="">Selecione o número do quarto</option>
                 <option *ngFor="let q of quartos" [value]="q.id">
                     {{ q.numero }}
                 </option>
             </select>
             <small *ngIf="f['quartoId'].touched && f['quartoId'].invalid" class="text-danger">
-                Selecione um quarto
+                Selecione o número do quarto
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Tipo do Quarto</label>
+            <select class="form-control" formControlName="quartoId">
+                <option value="">Selecione o tipo do quarto</option>
+                <option *ngFor="let q of quartos" [value]="q.id">
+                    {{ q.tipo }}
+                </option>
+            </select>
+            <small *ngIf="f['quartoId'].touched && f['quartoId'].invalid" class="text-danger">
+                Selecione o tipo do quarto
             </small>
         </div>
 
