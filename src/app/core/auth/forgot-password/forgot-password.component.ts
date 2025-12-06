@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-forgot-password',
@@ -15,6 +16,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private toastService: ToastrService,
     private router: Router
   ) { }
 
@@ -35,12 +37,12 @@ export class ForgotPasswordComponent implements OnInit {
       .subscribe({
         next: () => {
           this.loading = false;
-          alert('Um link de recuperação foi enviado para o seu email.')
+          this.toastService.info('Um link de recuperação foi enviado para o seu email.')
           this.router.navigate(['/login']);
         },
         error: () => {
           this.loading = false;
-          alert('Erro ao enviar email');
+          this.toastService.error('Erro ao enviar email');
         }
       });
   }

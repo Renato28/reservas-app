@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-password',
@@ -17,11 +18,13 @@ export class ResetPasswordComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private authService: AuthService,
+    private toastService: ToastrService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.token = this.route.snapshot.paramMap.get('token')!;
+    this.token = this.route.snapshot.queryParamMap.get('token')!;
+    console.log('token', this.token);
   }
 
   form = this.fb.group({
@@ -37,12 +40,12 @@ export class ResetPasswordComponent implements OnInit {
       .subscribe({
         next: () => {
           this.loading = false;
-          alert('Senha alterada com sucesso!');
+          this.toastService.info('Senha alterada com sucesso!');
           this.router.navigate(['/login']);
         },
         error: () => {
           this.loading = false;
-          alert('Token inválido ou expirado.')
+          this.toastService.error('Token inválido ou expirado.')
         }
       })
   }
