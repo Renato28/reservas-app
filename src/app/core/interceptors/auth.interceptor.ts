@@ -19,6 +19,10 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
 
+    if (request.url.includes('/auth/forgot-password') || request.url.includes('/auth/reset-password')) {
+      return next.handle(request);
+    }
+
     const token = this.authService.getToken();
 
     if (token) {

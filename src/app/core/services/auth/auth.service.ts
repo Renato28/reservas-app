@@ -42,14 +42,22 @@ export class AuthService {
   }
 
   forgotPassword(email: string) {
-    return this.http.post(this.apiUrl + "/forgot-password", { email });
+    return this.http.post(this.apiUrl + "/forgot-password", { email },
+      {
+        responseType: 'text'
+      }
+    );
   }
 
   resetPassword(token: string, novaSenha: string) {
     return this.http.post(this.apiUrl + "/reset-password", {
       token,
       novaSenha
-    });
+    },
+    {
+      responseType: 'text'
+    }
+  );
   }
 
   registrar(data: RegistroUsuarioRequest) {
