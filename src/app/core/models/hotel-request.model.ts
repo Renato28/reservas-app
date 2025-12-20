@@ -1,8 +1,7 @@
+import { EnderecoRequest } from "./endereco-request.model";
+
 export interface HotelRequest {
-    id?: number;
     nome: string;
-    endereco: string;
-    cidade: string;
-    estado: string;
     telefone: string;
+    endereco: EnderecoRequest
 }
