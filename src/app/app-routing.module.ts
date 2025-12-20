@@ -9,6 +9,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { ReservasFormComponent } from './features/reservas/reservas-form/reservas-form/reservas-form.component';
 import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/cadastro-cliente.component';
 import { CadastroQuartosComponent } from './features/quartos/cadastro-quartos/cadastro-quartos.component';
+import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
 
 const routes: Routes = [
   // ROTAS PÚBLICAS
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'reservas', component: ReservasFormComponent, canActivate: [AuthGuard] },
   { path: 'clientes', component: CadastroClienteComponent, canActivate: [AuthGuard] },
   { path: 'quartos', component: CadastroQuartosComponent, canActivate: [AuthGuard] },
+  { path: 'hoteis', component: CadastroHotelComponent, canActivate: [AuthGuard] },
 
   // REDIRECIONAMENTO PADRÃO → LOGIN
   { path: '', redirectTo: 'login', pathMatch: 'full' },
