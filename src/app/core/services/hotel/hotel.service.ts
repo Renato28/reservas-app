@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HotelRequest } from '../../models/hotel-request.model';
+import { HotelResponse } from '../../models/hotel-response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,20 +13,20 @@ export class HotelService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<HotelRequest[]> {
-    return this.http.get<HotelRequest[]>(`${this.apiUrl}`); 
+  listar(): Observable<HotelResponse[]> {
+    return this.http.get<HotelResponse[]>(`${this.apiUrl}`); 
   }
 
-  buscarPorId(id: number): Observable<HotelRequest> {
-    return this.http.get<HotelRequest>(`${this.apiUrl}/${id}`);
+  buscarPorId(id: number): Observable<HotelResponse> {
+    return this.http.get<HotelResponse>(`${this.apiUrl}/${id}`);
   }
 
-  cadastrar(dto: HotelRequest): Observable<HotelRequest> {
-    return this.http.post<HotelRequest>(`${this.apiUrl}`, dto);
+  cadastrar(dto: HotelRequest): Observable<HotelResponse> {
+    return this.http.post<HotelResponse>(`${this.apiUrl}`, dto);
   }
 
-  atualizar(id: number, dto: HotelRequest): Observable<HotelRequest> {
-    return this.http.put<HotelRequest>(`${this.apiUrl}/${id}`, dto);
+  atualizar(id: number, dto: HotelRequest): Observable<HotelResponse> {
+    return this.http.put<HotelResponse>(`${this.apiUrl}/${id}`, dto);
   }
 
   deletar(id: number): Observable<void> {
