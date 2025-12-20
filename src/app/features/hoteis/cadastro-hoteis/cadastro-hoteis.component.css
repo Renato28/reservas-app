@@ -1,0 +1,110 @@
+.container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #2c3e50;
+}
+
+.form-control {
+  width: 100%;
+  height: 42px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+.text-danger {
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* ===== CEP COM LUPA ===== */
+.cep-wrapper {
+  position: relative;
+}
+
+.cep-wrapper input {
+  padding-right: 45px;
+}
+
+.cep-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.cep-icon:hover {
+  color: #0056b3;
+}
+
+/* ===== BOTÃO ===== */
+button.btn-primary {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+button.btn-primary:disabled {
+  background-color: #b0cfff;
+  cursor: not-allowed;
+}
+
+.cep-input {
+  display: flex;
+  gap: 8px;
+}
+
+.cep-input input {
+  flex: 1;
+}
+
+.cep-input button {
+  height: 38px;
+}
+

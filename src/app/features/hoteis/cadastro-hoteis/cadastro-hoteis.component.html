@@ -1,0 +1,147 @@
+<div class="container">
+  <h2>Cadastrar Hotel</h2>
+
+  <form [formGroup]="hotelForm" (ngSubmit)="cadastrar()">
+
+    <!-- Nome -->
+    <div class="form-group">
+      <label>Nome do Hotel</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nome"
+        placeholder="Hotel Nóbrega"
+      />
+      <small *ngIf="invalid('nome')" class="text-danger">
+        Nome do hotel é obrigatório
+      </small>
+    </div>
+
+    <!-- Telefone -->
+    <div class="form-group">
+      <label>Telefone</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="telefone"
+        placeholder="(11) 99999-9999"
+      />
+      <small *ngIf="invalid('telefone')" class="text-danger">
+        Telefone é obrigatório
+      </small>
+    </div>
+
+    <hr />
+
+    <h4>Endereço</h4>
+
+    <!-- Endereço -->
+    <div formGroupName="endereco">
+
+      <!-- CEP com lupa -->
+      <div class="form-group cep-group">
+        <label>CEP</label>
+
+        <div class="cep-input">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="cep"
+            placeholder="00000-000"
+          />
+
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="buscarCep()"
+            title="Buscar CEP"
+          >
+            🔍
+          </button>
+        </div>
+
+        <small
+          *ngIf="hotelForm.get('endereco.cep')?.invalid &&
+                 hotelForm.get('endereco.cep')?.touched"
+          class="text-danger"
+        >
+          CEP é obrigatório
+        </small>
+      </div>
+
+      <!-- Logradouro -->
+      <div class="form-group">
+        <label>Logradouro</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="logradouro"
+        />
+      </div>
+
+      <!-- Bairro -->
+      <div class="form-group">
+        <label>Bairro</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="bairro"
+        />
+      </div>
+
+      <!-- Cidade -->
+      <div class="form-group">
+        <label>Cidade</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="cidade"
+        />
+        <small
+          *ngIf="hotelForm.get('endereco.cidade')?.invalid &&
+                 hotelForm.get('endereco.cidade')?.touched"
+          class="text-danger"
+        >
+          Cidade é obrigatória
+        </small>
+      </div>
+
+      <!-- Estado -->
+      <div class="form-group">
+        <label>Estado</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="estado"
+        />
+        <small
+          *ngIf="hotelForm.get('endereco.estado')?.invalid &&
+                 hotelForm.get('endereco.estado')?.touched"
+          class="text-danger"
+        >
+          Estado é obrigatório
+        </small>
+      </div>
+
+      <!-- Complemento -->
+      <div class="form-group">
+        <label>Complemento</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="complemento"
+        />
+      </div>
+
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary mt-3"
+      [disabled]="hotelForm.invalid"
+    >
+      Salvar
+    </button>
+
+  </form>
+</div>
