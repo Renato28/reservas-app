@@ -13,7 +13,6 @@ import { ForgotPasswordComponent } from './core/auth/forgot-password/forgot-pass
 import { ResetPasswordComponent } from './core/auth/reset-password/reset-password.component';
 import { RegisterUsuarioComponent } from './core/auth/register-usuario/register-usuario.component';
 import { DashboardComponent } from './core/componentes/dashboard/dashboard.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { SharedModule } from './shared/shared.module';
 import { NgChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
@@ -21,6 +20,7 @@ import { ReservasFormComponent } from './features/reservas/reservas-form/reserva
 import { RouterModule } from '@angular/router';
 import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/cadastro-cliente.component';
 import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-quartos/cadastro-quartos.component';
+import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
 
 
 
@@ -35,6 +35,7 @@ import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-qua
     ReservasFormComponent,
     CadastroClienteComponent,
     CadastroQuartosComponent,
+    CadastroHotelComponent,
   ],
   imports: [
     BrowserModule,
