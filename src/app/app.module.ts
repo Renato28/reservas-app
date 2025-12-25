@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/cadastro-cliente.component';
 import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-quartos/cadastro-quartos.component';
 import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
+import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios/cadastro-usuarios.component';
 
 
 
@@ -36,6 +37,7 @@ import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadast
     CadastroClienteComponent,
     CadastroQuartosComponent,
     CadastroHotelComponent,
+    CadastroUsuariosComponent,
   ],
   imports: [
     BrowserModule,
