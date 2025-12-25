@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Cadastrar Usuário</h2>
+
+    <form [formGroup]="usuarioForm" (ngSubmit)="cadastrar()">
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" formControlName="nome">
+            <small *ngIf="invalid('nome')" class="text-danger">
+                Nome é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <small *ngIf="invalid('email')" class="text-danger">
+                E-mail é obrigatório
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label>Senha</label>
+            <input type="text" class="form-control" formControlName="senha">
+            <small *ngIf="invalid('senha')" class="text-danger">
+                Senha é obrigatória
+            </small>
+        </div>
+
+
+        <div class="form-group">
+            <label>Perfil</label>
+            <select class="form-control" formControlName="perfil">
+                <option value="">Selecione</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="USER">USER</option>
+                <option value="GERENTE">GERENTE</option>
+                <option value="RECEPCIONISTA">RECEPCIONISTA</option>
+                <option value="CAMAREIRA">CAMAREIRA</option>
+                <option value="HOSPEDE">HOSPEDE</option>
+            </select>
+            <small *ngIf="invalid('perfil')" class="text-danger">
+                Perfil do usuário é obrigatório
+            </small>
+        </div>
+
+         <button class="btn btn-primary mt-3" [disabled]="usuarioForm.invalid">
+         Salvar
+        </button>
+    </form>
+</div>
+
