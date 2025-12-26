@@ -25,7 +25,7 @@ export class QuartoService {
   }
 
   cadastrar(dto: QuartoRequest): Observable<QuartoRequest> {
-    return this.http.put<QuartoRequest>(`${this.apiUrl}`, dto);
+    return this.http.post<QuartoRequest>(`${this.apiUrl}`, dto);
   }
 
   consultarStatus(id: number): Observable<string> {
