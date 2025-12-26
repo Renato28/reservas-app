@@ -7,4 +7,5 @@ export interface QuartoRequest {
     tipo: TipoQuarto;
     precoDiaria: number;
     status: StatusQuarto;
+    hotelId: number;
 }
