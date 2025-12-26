@@ -11,6 +11,7 @@ import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/c
 import { CadastroQuartosComponent } from './features/quartos/cadastro-quartos/cadastro-quartos.component';
 import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
 import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios/cadastro-usuarios.component';
+import { ListarReservasComponent } from './features/reservas/listar-reservas/listar-reservas.component';
 
 const routes: Routes = [
   // ROTAS PÚBLICAS
@@ -28,7 +29,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
-  { path: 'reservas', component: ReservasFormComponent, canActivate: [AuthGuard] },
+  { path: 'reservas', component: ListarReservasComponent, canActivate: [AuthGuard] },
+  { path: 'reservas/cadastro', component: ReservasFormComponent, canActivate: [AuthGuard]},
   { path: 'clientes', component: CadastroClienteComponent, canActivate: [AuthGuard] },
   { path: 'quartos', component: CadastroQuartosComponent, canActivate: [AuthGuard] },
   { path: 'hoteis', component: CadastroHotelComponent, canActivate: [AuthGuard] },
