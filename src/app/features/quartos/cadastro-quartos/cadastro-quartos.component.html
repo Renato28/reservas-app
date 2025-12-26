@@ -3,6 +3,15 @@
 
     <form [formGroup]="quartoForm" (ngSubmit)="cadastrar()">
 
+        <div class="form-row">
+            <label>Hotel</label>
+            <select class="form-control" formControlName="hotelId">
+                <option value="">Selecione...</option>
+                <option *ngFor="let hotel of hoteis" [value]="hotel.id">{{ hotel.nome }}</option>
+            </select>
+            <small *ngIf="invalid('hotelId')" class="text-danger">Hotel é obrigatório</small>
+        </div>
+
         <!-- Número do Quarto -->
         <div class="form-row">
             <label>Número do Quarto</label>

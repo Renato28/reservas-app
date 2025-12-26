@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { QuartoRequest } from 'src/app/core/models/quarto-request.model';
 import { StatusQuarto } from 'src/app/core/models/status-quarto.enum';
 import { TipoQuarto } from 'src/app/core/models/tipo-quarto.enum';
+import { HotelService } from 'src/app/core/services/hotel/hotel.service';
 import { QuartoService } from 'src/app/core/services/quarto/quarto.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class CadastroQuartosComponent implements OnInit {
 
   quartoForm!: FormGroup;
   submitting = false;
+  hoteis: any[] = [];
 
   tiposQuarto = Object.values(TipoQuarto);
   statusOptions = Object.values(StatusQuarto);
@@ -23,16 +25,21 @@ export class CadastroQuartosComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private quartoService: QuartoService,
+    private hotelService: HotelService,
     private toastService: ToastrService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
+
+    this.hotelService.listar().subscribe(res => this.hoteis = res);
+
     this.quartoForm = this.fb.group({
       numero: ['', Validators.required],
       tipo: ['', Validators.required],
       precoDiaria: ['', [Validators.required, Validators.min(1)]],
-      status: ['', Validators.required]
+      status: ['', Validators.required],
+      hotelId: ['', Validators.required]
     });
   }
 
