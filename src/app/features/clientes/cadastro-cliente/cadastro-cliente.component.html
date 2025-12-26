@@ -38,8 +38,8 @@
             <label>Tipo de Cliente</label>
             <select class="form-control" formControlName="tipoCliente">
                 <option value="">Selecione</option>
-                <option value="FISICA">PESSOA FISICA</option>
-                <option value="JURIDICA">PESSOA JURIDICA</option>
+                <option value="PESSOA_FISICA">PESSOA FÍSICA</option>
+                <option value="PESSOA_JURIDICA">PESSOA JURIDICA</option>
                 <option value="AGENCIA">AGÊNCIA</option>
             </select>
             <small *ngIf="invalid('tipoCliente')" class="text-danger">
