@@ -22,6 +22,7 @@ import { CadastroClienteComponent } from './features/clientes/cadastro-cliente/c
 import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-quartos/cadastro-quartos.component';
 import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
 import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios/cadastro-usuarios.component';
+import { ListarReservasComponent } from './features/reservas/listar-reservas/listar-reservas.component';
 
 
 
@@ -38,6 +39,7 @@ import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios
     CadastroQuartosComponent,
     CadastroHotelComponent,
     CadastroUsuariosComponent,
+    ListarReservasComponent,
   ],
   imports: [
     BrowserModule,
