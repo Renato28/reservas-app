@@ -64,7 +64,7 @@ export class ReservasFormComponent implements OnInit {
     this.reservaService.cadastrar(reserva).subscribe({
       next: () => {
         this.toastService.info('Reserva cadastrada com sucesso!');
-        this.router.navigate(['/reservas']);
+        this.router.navigate(['/reservas'], { replaceUrl: true });
       },
       error: (err) => {
         this.toastService.error('Erro ao cadastrar reserva!');
