@@ -1,0 +1,30 @@
+<div class="container-check mt-4">
+  <h2 class="title">Realizar Check-in</h2>
+
+  <form [formGroup]="formCheckin" (ngSubmit)="buscarReserva()" class="form-busca">
+    <input type="text" class="form-control input-codigo"
+           placeholder="Digite o código da reserva"
+           formControlName="codigo">
+
+    <button type="submit"
+            class="btn btn-primary btn-buscar"
+            [disabled]="formCheckin.invalid">
+      <i class="fa fa-search"></i> Buscar
+    </button>
+  </form>
+
+  <div *ngIf="reserva" class="card card-info mt-3 p-3">
+    <p><strong>Reserva:</strong> {{ reserva.codigo }}</p>
+    <p><strong>Cliente:</strong> {{ reserva.nomeCliente }}</p>
+    <p><strong>N° Quarto:</strong> {{ reserva.numeroQuarto }}</p>
+    <p><strong>Check-in:</strong> {{ reserva.dataCheckIn | date: 'dd/MM/yyyy' }}</p>
+    <p><strong>Check-out:</strong> {{ reserva.dataCheckOut | date: 'dd/MM/yyyy' }}</p>
+    <p><strong>Valor Total:</strong> {{ reserva.valorTotal }}</p>
+  </div>
+
+  <button class="btn btn-success btn-check mt-3"
+          (click)="realizarCheckIn()"
+          *ngIf="reserva">
+    <i class="fa fa-door-open"></i> Confirmar Check-in
+  </button>
+</div>
