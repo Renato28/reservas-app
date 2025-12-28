@@ -23,6 +23,7 @@ import { CadastroQuartosComponent } from './../app/features/quartos/cadastro-qua
 import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadastro-hoteis.component';
 import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios/cadastro-usuarios.component';
 import { ListarReservasComponent } from './features/reservas/listar-reservas/listar-reservas.component';
+import { CheckinComponent } from './features/reservas/checkin/checkin/checkin.component';
 
 
 
@@ -40,6 +41,7 @@ import { ListarReservasComponent } from './features/reservas/listar-reservas/lis
     CadastroHotelComponent,
     CadastroUsuariosComponent,
     ListarReservasComponent,
+    CheckinComponent,
   ],
   imports: [
     BrowserModule,
