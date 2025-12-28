@@ -10,6 +10,8 @@
   <nav class="menu">
     <a routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-chart-line"></i><span *ngIf="!collapsed">Dashboard</span></a>
     <a routerLink="/reservas/cadastro" routerLinkActive="active"><i class="fa fa-calendar-days"></i><span *ngIf="!collapsed">Reservas</span></a>
+    <a routerLink="/reservas/checkin" routerLinkActive="active"><i class="fa-solid fa-right-to-bracket"></i><span *ngIf="!collapsed">CheckIn</span></a>
+    <a routerLink="/reservas/checkout" routerLinkActive="active"><i class="fa-solid fa-door-open"></i><span *ngIf="!collapsed">CheckOut</span></a>
     <a routerLink="/clientes" routerLinkActive="active"><i class="fa fa-users"></i><span *ngIf="!collapsed">Clientes</span></a>
     <a routerLink="/quartos" routerLinkActive="active"><i class="fa fa-door-open"></i><span *ngIf="!collapsed">Quartos</span></a>
     <a routerLink="/hoteis" routerLinkActive="active"><i class="fa fa-building"></i><span *ngIf="!collapsed">Hotéis</span></a>
