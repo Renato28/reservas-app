@@ -1,5 +1,5 @@
 export interface ReservaResponse {
-    id: number;
+    codigo: number;
     nomeCliente: string;
     numeroQuarto: string;
     dataCheckIn: string;
