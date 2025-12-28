@@ -12,6 +12,7 @@ import { CadastroHotelComponent } from './features/hoteis/cadastro-hoteis/cadast
 import { CadastroUsuariosComponent } from './features/usuarios/cadastro-usuarios/cadastro-usuarios.component';
 import { ListarReservasComponent } from './features/reservas/listar-reservas/listar-reservas.component';
 import { CheckinComponent } from './features/reservas/checkin/checkin/checkin.component';
+import { CheckoutComponent } from './features/reservas/checkout/checkout/checkout.component';
 
 const routes: Routes = [
   // ROTAS PÚBLICAS
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'hoteis', component: CadastroHotelComponent, canActivate: [AuthGuard] },
   { path: 'usuarios', component: CadastroUsuariosComponent, canActivate: [AuthGuard] },
   { path: 'reservas/checkin', component: CheckinComponent, canActivate: [AuthGuard] },
+  { path: 'reservas/checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
 
   // REDIRECIONAMENTO PADRÃO → LOGIN
   { path: '', redirectTo: 'login', pathMatch: 'full' },
