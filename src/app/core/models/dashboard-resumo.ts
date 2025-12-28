@@ -1,8 +1,8 @@
 export interface DashboardResumo {
   reservasAtivas: number;
   reservasPendentes: number;
-  checkInsHoje: number;
-  checkOutsHoje: number;
+  checkIns: number;
+  checkOuts: number;
   hospedesAtuais: number;
   quartosOcupados: number;
   quartosDisponiveis: number;
